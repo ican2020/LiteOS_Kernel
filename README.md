@@ -24,6 +24,7 @@
 ##开发板支持
 * STM32F411
 * STM32F429
+* EMSK (Synopsys Designware ARC EM Processor)
 * GD（working）
 
 ##主要特征
