@@ -49,17 +49,39 @@ extern "C" {
 extern void LosAdapIrpEnable(unsigned int irqnum, unsigned short prior);
 extern void LosAdapIrqDisable(unsigned int irqnum);
 
+
+/*****************************************************************************
+ Function    : LOS_IntUnLock
+ Description : Unlock all interrupts
+ Input       : None
+ Output      : None
+ Return      : 0
+ *****************************************************************************/
 UINTPTR LOS_IntUnLock(VOID) 
 {
     arc_unlock();
     return 0;
 }
 
+/*****************************************************************************
+ Function    : LOS_IntLock
+ Description : Lock all interrupts
+ Input       : None
+ Output      : None
+ Return      : Interrupt priority mask and interrupt enable bit 
+ *****************************************************************************/
 UINTPTR LOS_IntLock(VOID)
 {
     return (UINTPTR) arc_lock_save();
 }
 
+/*****************************************************************************
+ Function    : LOS_IntRestore
+ Description : Restore interrupt related status
+ Input       : None
+ Output      : None
+ Return      : None 
+ *****************************************************************************/
 VOID LOS_IntRestore(UINTPTR uvIntSave)
 {
     arc_unlock_restore(uvIntSave);

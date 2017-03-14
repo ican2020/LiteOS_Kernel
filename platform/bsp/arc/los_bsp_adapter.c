@@ -70,15 +70,14 @@ unsigned int osTickStart(void)
 
 /*****************************************************************************
  Function    : LosAdapIntInit
- Description : config vector table in ram. please see g_use_ram_vect illustration
-               this is used for arm cortex-M3/M4
+ Description : config vector table in ram.
  Input       : None
  Output      : None
  Return      : LOS_OK
  *****************************************************************************/
 void LosAdapIntInit(void)
 {
-    
+  
 }
 
 /*****************************************************************************

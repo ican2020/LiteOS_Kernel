@@ -43,6 +43,7 @@
 #ifndef _LOS_HW_H
 #define _LOS_HW_H
 
+#include "inc/arc/arc.h"
 #include "los_base.h"
 
 #ifdef __cplusplus

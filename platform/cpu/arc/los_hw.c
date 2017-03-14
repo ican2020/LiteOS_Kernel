@@ -142,37 +142,37 @@ LITE_OS_SEC_TEXT_INIT VOID *osTskStackInit(UINT32 uwTaskID, UINT32 uwStackSize, 
     pstContext    = (TSK_CONTEXT_S *)(((UINT32)pTopStack + uwStackSize) - sizeof(TSK_CONTEXT_S));
 
 #ifndef ARC_FEATURE_RF16
-    pstContext->uwR25  = 0x25252525L;
-    pstContext->uwR24  = 0x24242424L;
-    pstContext->uwR23  = 0x23232323L;
-    pstContext->uwR22  = 0x22222222L;
-    pstContext->uwR21  = 0x21212121L;
-    pstContext->uwR20  = 0x20202020L;
-    pstContext->uwR19  = 0x19191919L;
-    pstContext->uwR18  = 0x18181818L;
-    pstContext->uwR17  = 0x17171717L;
-    pstContext->uwR16  = 0x16161616L;
+    pstContext->uwR25 = 0x25252525L;
+    pstContext->uwR24 = 0x24242424L;
+    pstContext->uwR23 = 0x23232323L;
+    pstContext->uwR22 = 0x22222222L;
+    pstContext->uwR21 = 0x21212121L;
+    pstContext->uwR20 = 0x20202020L;
+    pstContext->uwR19 = 0x19191919L;
+    pstContext->uwR18 = 0x18181818L;
+    pstContext->uwR17 = 0x17171717L;
+    pstContext->uwR16 = 0x16161616L;
 #endif
-    pstContext->uwR15  = 0x15151515L;
-    pstContext->uwR14  = 0x14141414L;
-    pstContext->uwR13  = 0x13131313L;
+    pstContext->uwR15 = 0x15151515L;
+    pstContext->uwR14 = 0x14141414L;
+    pstContext->uwR13 = 0x13131313L;
     pstContext->uwBTA = 0x0;
     pstContext->uwR30 = 0x30303030L;
     pstContext->uwILINK = 0x29292929L;
     pstContext->uwFP = 0x0;
     pstContext->uwGP = (UINT32)&_f_sdata;
     pstContext->uwR12 = 0x12121212L;
-    pstContext->uwR0  = uwTaskID;
-    pstContext->uwR1  = 0x01010101L;
-    pstContext->uwR2  = 0x02020202L;
-    pstContext->uwR3  = 0x03030303L;
+    pstContext->uwR0 = uwTaskID;
+    pstContext->uwR1 = 0x01010101L;
+    pstContext->uwR2 = 0x02020202L;
+    pstContext->uwR3 = 0x03030303L;
 #ifndef ARC_FEATURE_RF16
-    pstContext->uwR4  = 0x04040404L;
-    pstContext->uwR5  = 0x05050505L;
-    pstContext->uwR6  = 0x06060606L;
-    pstContext->uwR7  = 0x07070707L;
-    pstContext->uwR8  = 0x08080808L;
-    pstContext->uwR9  = 0x09090909L;
+    pstContext->uwR4 = 0x04040404L;
+    pstContext->uwR5 = 0x05050505L;
+    pstContext->uwR6 = 0x06060606L;
+    pstContext->uwR7 = 0x07070707L;
+    pstContext->uwR8 = 0x08080808L;
+    pstContext->uwR9 = 0x09090909L;
 #endif
     pstContext->uwR10 = 0x10101010L;
     pstContext->uwR11 = 0x11111111L;
@@ -186,7 +186,7 @@ LITE_OS_SEC_TEXT_INIT VOID *osTskStackInit(UINT32 uwTaskID, UINT32 uwStackSize, 
     pstContext->uwLDI = 0x0; 
     pstContext->uwJLI = 0x0;
 #endif
-    pstContext->uwPC  = (UINT32)osTaskEntry;
+    pstContext->uwPC = (UINT32)osTaskEntry;
     pstContext->uwSTATUS32 = INITIAL_STATUS32;
     return (VOID *)pstContext;
 }

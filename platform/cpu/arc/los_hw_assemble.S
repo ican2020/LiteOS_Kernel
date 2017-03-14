@@ -88,7 +88,7 @@ LOS_StartToRun:
 	//   g_bTaskScheduled = 1;
 	mov 	r0, 1
 	st 	r0, [g_bTaskScheduled]
-   
+
 	mov 	r0, 0
 	st 	r0, [exc_nest_count]
 	b 	dispatcher_0

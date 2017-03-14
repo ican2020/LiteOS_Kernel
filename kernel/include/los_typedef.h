@@ -157,7 +157,11 @@ typedef unsigned long long  uint64_t;
 #define OS_ERROR                                            (UINT32)(-1)
 #define OS_INVALID                                          (UINT32)(-1)
 
+#ifdef asm
+#undef asm
+#endif
 #define asm                                                 __asm
+
 #ifdef typeof
 #undef typeof
 #endif
