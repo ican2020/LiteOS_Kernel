@@ -57,12 +57,12 @@ unsigned int osTickStart(void)
     g_ucycle_per_tick = sys_clk_freq / tick_per_second;
     LOS_SetTickSycle(g_ucycle_per_tick);
 
-    int_disable(BOARD_OS_TIMER_INTNO); /* disable os timer interrupt */
-    timer_stop(BOARD_OS_TIMER_ID);
-    timer_start(BOARD_OS_TIMER_ID, TIMER_CTRL_IE | TIMER_CTRL_NH, g_ucycle_per_tick);
+    int_disable(INTNO_TIMER0); /* disable os timer interrupt */
+    timer_stop(TIMER_0);
+    timer_start(TIMER_0, TIMER_CTRL_IE | TIMER_CTRL_NH, g_ucycle_per_tick);
 
-    int_handler_install(BOARD_OS_TIMER_INTNO, (INT_HANDLER)LOS_TickHandler);
-    int_enable(BOARD_OS_TIMER_INTNO);
+    int_handler_install(INTNO_TIMER0, (INT_HANDLER)LOS_TickHandler);
+    int_enable(INTNO_TIMER0);
 
     return 0;
 }

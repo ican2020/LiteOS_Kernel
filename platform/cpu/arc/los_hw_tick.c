@@ -64,7 +64,7 @@ return  : none
 void LOS_TickHandler(void)
 {
     /* clear timer interrupt */
-    timer_int_clear(BOARD_OS_TIMER_ID);
+    timer_int_clear(TIMER_0);
     board_timer_update(LOSCFG_BASE_CORE_TICK_PER_SECOND);
     
 	osTickHandler();
@@ -102,7 +102,7 @@ LITE_OS_SEC_TEXT_MINOR VOID LOS_GetCpuCycle(UINT32 *puwCntHi, UINT32 *puwCntLo)
 
     ullSwTick = g_ullTickCount;
 
-    timer_current(BOARD_OS_TIMER_ID, &uwHwCycle);
+    timer_current(TIMER_0, &uwHwCycle);
 
     ullCycle = (((ullSwTick) * g_uwCyclesPerTick) + uwHwCycle);
     *puwCntHi = ullCycle >> 32;
